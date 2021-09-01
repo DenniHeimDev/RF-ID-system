@@ -15,5 +15,6 @@ while True:
     print("Scan kortet:")
 
     x = input()
+
     print("Velkommen: ", idDict[x], ".", "Du kom klokka ", datetime.now())
 
