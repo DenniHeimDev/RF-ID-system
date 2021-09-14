@@ -30,6 +30,7 @@ while True:
         
     if(keyError == True):
         print("Prøv Igjen...")
+        keyError = False
     else:
         print("Velkommen: %s. Du kom klokka %s" % (forNavn, datetime.now()))    
         
