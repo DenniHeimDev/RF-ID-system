@@ -1,17 +1,16 @@
 from datetime import datetime
 
-
-
 idDict = {
     "1234": "Dennis Heimsaeter",
     "4321": "Rikard Solar",
     "2314": "Sadner Rebni"
 }
 
-now = datetime.now()
-print(now)
-timestamp = datetime.timestamp(now)
-print("timestamp =", timestamp)
+def timestamp():
+    now = datetime.now()
+    time = datetime.timestamp(now)
+    return time
+    
 
 while True:
     forNavn = ""
@@ -22,6 +21,7 @@ while True:
     print("Scan kortet:")
 
     x = input()
+
     try:
         forNavn = idDict[x]
     except KeyError as e:
@@ -32,7 +32,10 @@ while True:
         print("Prøv Igjen...")
         keyError = False
     else:
-        print("Velkommen: %s. Du kom klokka %s" % (forNavn, datetime.now()))    
+        print("Velkommen: %s %s. Du kom klokka %s" % (forNavn, etterNavn, datetime.now()))
+        saveFile = open("inngangsinfo.txt", "a")
+        saveFile.write("%s,%s\n" % (forNavn, timestamp())) 
+        saveFile.close()   
         
     
     #print("Velkommen: ", navn, ".", "Du kom klokka ", datetime.now())
