@@ -35,7 +35,7 @@ while True:
         print("Velkommen: %s %s. Du kom klokka %s" % (forNavn, etterNavn, datetime.now()))
         saveFile = open("inngangsinfo.txt", "a")
         saveFile.write("%s,%s\n" % (forNavn, timestamp())) 
-        saveFile.close()   
+        saveFile.close()
         
     
     #print("Velkommen: ", navn, ".", "Du kom klokka ", datetime.now())
