@@ -1,9 +1,9 @@
 from datetime import datetime
 
 idDict = {
-    "1234": "Dennis Heimsaeter",
-    "4321": "Rikard Solar",
-    "2314": "Sadner Rebni"
+    "02C915B180D900": "Dennis Heimsaeter",
+    "047570AA985A80": "Rikard Solar",
+    "5C8FA70C": "Sadner Rebni"
 }
 
 def timestamp():
@@ -14,7 +14,6 @@ def timestamp():
 
 while True:
     forNavn = ""
-    etterNavn = ""
 
     keyError = False
     
@@ -32,9 +31,10 @@ while True:
         print("Prøv Igjen...")
         keyError = False
     else:
-        print("Velkommen: %s %s. Du kom klokka %s" % (forNavn, etterNavn, datetime.now()))
+        print("Velkommen: %s. Du kom %s" % (forNavn, datetime.now()))
         saveFile = open("inngangsinfo.txt", "a")
         saveFile.write("%s,%s\n" % (forNavn, timestamp())) 
+        pause(1)
         saveFile.close()
         
     
