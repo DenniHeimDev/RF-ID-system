@@ -1,4 +1,5 @@
 from datetime import datetime
+from time import sleep  # Legg til denne importen
 
 idDict = {
     "02C915B180D900": "Dennis Heimsaeter",
@@ -34,9 +35,8 @@ while True:
         print("Velkommen: %s. Du kom %s" % (forNavn, datetime.now()))
         saveFile = open("inngangsinfo.txt", "a")
         saveFile.write("%s,%s\n" % (forNavn, timestamp())) 
-        pause(1)
+        sleep(1)  # Endret fra pause(1) til sleep(1)
         saveFile.close()
         
     
-    #print("Velkommen: ", navn, ".", "Du kom klokka ", datetime.now())
-
+    #print("Velkommen: ", idDict[x], ".", "Du kom klokka ", datetime.now())
